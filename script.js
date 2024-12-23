@@ -91,3 +91,6 @@ function startTracking() {
         alert("La geolocalización no está soportada por tu navegador.");
     }
 }
+
+
+  
