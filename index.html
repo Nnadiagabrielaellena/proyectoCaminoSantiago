@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buen Camino - App del Camino de Santiago</title>
+
+    <!-- Leaflet.js CSS (para el mapa) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <!-- Nuestro CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <h1>Camino de Santiago</h1>
+        <p>Tu guía interactiva para recorrer el Camino de Santiago.</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Sección para el mapa -->
+        <section id="mapa">
+            <h2>Mapa Interactivo del Camino</h2>
+            <div id="map" class="mapa"></div>
+        </section>
+
+        <!-- Información de las etapas -->
+        <section id="etapas">
+            <h2>Etapas del Camino</h2>
+            <ul id="lista-etapas">
+                <li><a href="#" onclick="mostrarEtapa(1)">Etapa 1: Saint-Jean-Pied-de-Port a Roncesvalles (25 km)</a></li>
+                <li><a href="#" onclick="mostrarEtapa(2)">Etapa 2: Roncesvalles a Pamplona (40 km)</a></li>
+                <li><a href="#" onclick="mostrarEtapa(3)">Etapa 3: Pamplona a Logroño (60 km)</a></li>
+                <li><a href="#" onclick="mostrarEtapa(4)">Etapa 4: Logroño a Burgos (90 km)</a></li>
+            </ul>
+        </section>
+
+        <!-- Calculadora de distancia -->
+        <section id="calculadora">
+            <h2>Calculadora de Distancia</h2>
+            <label for="etapa">Selecciona la etapa:</label>
+            <select id="etapa" onchange="mostrarDistancia()">
+                <option value="1">Saint-Jean-Pied-de-Port a Roncesvalles (25 km)</option>
+                <option value="2">Roncesvalles a Pamplona (40 km)</option>
+                <option value="3">Pamplona a Logroño (60 km)</option>
+                <option value="4">Logroño a Burgos (90 km)</option>
+            </select>
+            <p id="distancia">Distancia: 25 km</p>
+        </section>
+
+        <!-- Alojamiento y Puntos de interés -->
+        <section id="alojamientos">
+            <h2>Alojamientos y Puntos de Interés</h2>
+            <div id="alojamientos-info"></div>
+        </section>
+
+        <!-- Funcionalidad de Tracking GPS -->
+        <section id="tracking">
+            <h2>Tu Ubicación en Tiempo Real</h2>
+            <p>Verifica tu ubicación en el mapa en tiempo real.</p>
+            <button id="startTracking" onclick="startTracking()">Iniciar Tracking</button>
+            <p id="gpsStatus"></p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Camino de Santiago. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script Leaflet.js -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- Nuestro script -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+
